@@ -1,0 +1,19 @@
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-card, .book-card, .category-card, .testimonial-card, .auth-card, .cart-summary, .checkout-card {
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-badge, .icon-btn:hover, .btn-primary:hover { animation: floaty 2s ease-in-out infinite; }

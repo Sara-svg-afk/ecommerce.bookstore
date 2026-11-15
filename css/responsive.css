@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+  .search-box input { min-width: 200px; }
+  .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse { padding: 16px 0; }
+  .search-box input { min-width: unset; width: 100%; }
+  .hero-slide { padding: 24px; }
+  .shop-grid { grid-template-columns: 1fr; }
+  .newsletter { padding: 28px; }
+  .auth-card { padding: 24px; }
+  .toast-container { left: 16px; right: 16px; top: 16px; }
+  .toast-item { min-width: unset; }
+}

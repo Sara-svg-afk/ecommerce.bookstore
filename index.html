@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PageTurner | Online Bookstore</title>
+    <meta name="description" content="Modern online bookstore with featured books, best sellers, and a seamless checkout experience." />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <div class="loading-overlay" id="loadingOverlay"><div class="loading-spinner"></div></div>
+    <div class="toast-container" id="toastContainer"></div>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Page<span>Turner</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-2">
+            <form class="search-box d-none d-lg-block">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search books" />
+            </form>
+            <a href="wishlist.html" class="icon-btn"><i class="far fa-heart"></i><span class="badge-count">3</span></a>
+            <a href="cart.html" class="icon-btn"><i class="fas fa-shopping-cart"></i><span class="badge-count">2</span></a>
+            <button class="icon-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="btn btn-outline-primary">Login</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-slide active">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-7">
+                <span class="badge bg-primary-subtle text-primary mb-3">New season picks</span>
+                <h1 class="hero-title">Discover stories that spark your imagination.</h1>
+                <p class="hero-text">Browse bestselling novels, thought-provoking non-fiction, and inspiring children’s books curated for every reader.</p>
+                <div class="d-flex gap-3 flex-wrap mt-4">
+                  <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                  <a href="about.html" class="btn btn-outline-primary">Our Story</a>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <img class="hero-image" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80" alt="Books on table" />
+              </div>
+            </div>
+          </div>
+          <div class="hero-slide">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-7">
+                <span class="badge bg-primary-subtle text-primary mb-3">Limited collection</span>
+                <h1 class="hero-title">Curated reads for every mood and season.</h1>
+                <p class="hero-text">From cozy mysteries to practical guides, find your next favorite title with ease.</p>
+                <div class="d-flex gap-3 flex-wrap mt-4">
+                  <a href="shop.html" class="btn btn-primary">Explore Books</a>
+                  <a href="contact.html" class="btn btn-outline-primary">Contact Us</a>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <img class="hero-image" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80" alt="Reader with books" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h2 class="section-title">Featured Books</h2>
+              <p class="section-subtitle">Handpicked by our editors for your next great read.</p>
+            </div>
+            <a href="shop.html" class="btn btn-outline-primary">View All</a>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover">
+                  <span class="badge-discount">-20%</span>
+                  <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80" alt="The Midnight Orchard" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">The Midnight Orchard</h3>
+                  <p class="book-author">Elena Hart</p>
+                  <div class="book-meta"><span>Fantasy</span><span>★ 4.8</span></div>
+                  <div class="price-row">
+                    <div><span class="price">Rs 1899</span><span class="old-price">Rs 2374</span></div>
+                    <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover">
+                  <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80" alt="The Quiet Horizon" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">The Quiet Horizon</h3>
+                  <p class="book-author">Marcus Vale</p>
+                  <div class="book-meta"><span>Biography</span><span>★ 4.6</span></div>
+                  <div class="price-row">
+                    <div><span class="price">Rs 1450</span></div>
+                    <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover">
+                  <span class="badge-discount">-15%</span>
+                  <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80" alt="Mindset Shift" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">Mindset Shift</h3>
+                  <p class="book-author">Ava Bennett</p>
+                  <div class="book-meta"><span>Self-Help</span><span>★ 4.9</span></div>
+                  <div class="price-row">
+                    <div><span class="price">Rs 1620</span><span class="old-price">Rs 1906</span></div>
+                    <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover">
+                  <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                  <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="The City of Glass" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title">The City of Glass</h3>
+                  <p class="book-author">Nora Quinn</p>
+                  <div class="book-meta"><span>Literary</span><span>★ 4.7</span></div>
+                  <div class="price-row">
+                    <div><span class="price">Rs 2100</span></div>
+                    <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-0">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="category-card">
+                <div class="category-icon"><i class="fas fa-book-open"></i></div>
+                <h4>Fiction</h4>
+                <p>Immerse yourself in compelling stories and unforgettable characters.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="category-card">
+                <div class="category-icon"><i class="fas fa-brain"></i></div>
+                <h4>Non-Fiction</h4>
+                <p>Learn from experts, explore ideas, and grow your perspective.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="category-card">
+                <div class="category-icon"><i class="fas fa-child"></i></div>
+                <h4>Children</h4>
+                <p>Bright, engaging stories that spark curiosity and joy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h2 class="section-title">Best Sellers</h2>
+              <p class="section-subtitle">Readers keep coming back for these favorites.</p>
+            </div>
+            <a href="shop.html" class="btn btn-outline-primary">Browse</a>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover"><img src="https://images.unsplash.com/photo-1513001900722-370f803f498d?auto=format&fit=crop&w=800&q=80" alt="The Last Lantern" /></div>
+                <div class="book-info">
+                  <h3 class="book-title">The Last Lantern</h3>
+                  <p class="book-author">Sophie Lane</p>
+                  <div class="book-meta"><span>Adventure</span><span>★ 4.8</span></div>
+                  <div class="price-row"><span class="price">Rs 1999</span><button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80" alt="The Art of Rest" /></div>
+                <div class="book-info">
+                  <h3 class="book-title">The Art of Rest</h3>
+                  <p class="book-author">Jules Mercer</p>
+                  <div class="book-meta"><span>Wellness</span><span>★ 4.5</span></div>
+                  <div class="price-row"><span class="price">Rs 1299</span><button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="The Golden Thread" /></div>
+                <div class="book-info">
+                  <h3 class="book-title">The Golden Thread</h3>
+                  <p class="book-author">Lina Torres</p>
+                  <div class="book-meta"><span>Drama</span><span>★ 4.7</span></div>
+                  <div class="price-row"><span class="price">Rs 1749</span><button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <article class="book-card">
+                <div class="book-cover"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="Design Your Life" /></div>
+                <div class="book-info">
+                  <h3 class="book-title">Design Your Life</h3>
+                  <p class="book-author">Mina Brooks</p>
+                  <div class="book-meta"><span>Productivity</span><span>★ 4.4</span></div>
+                  <div class="price-row"><span class="price">Rs 1500</span><button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+              <h2 class="section-title">Why readers love PageTurner</h2>
+              <p class="section-subtitle">From a curated catalog to fast delivery, we make every step feel effortless.</p>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="category-card">
+                    <h4 data-count="25000" data-suffix="+">0</h4>
+                    <p>Books available</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="category-card">
+                    <h4 data-count="98" data-suffix="%">0</h4>
+                    <p>Positive reviews</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="category-card">
+                    <h4 data-count="24" data-suffix="/7">0</h4>
+                    <p>Customer support</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="category-card">
+                    <h4 data-count="4" data-suffix=".9/5">0</h4>
+                    <p>Average rating</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <img class="rounded-4 shadow" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=80" alt="Bookstore interior" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="newsletter">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-8">
+                <h2 class="section-title text-white">Subscribe for weekly book picks</h2>
+                <p class="text-white-50">Never miss new arrivals, special offers, and exclusive recommendations.</p>
+              </div>
+              <div class="col-lg-4">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Email address" required />
+                  <button class="btn btn-dark">Join</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h2 class="section-title">What Our Readers Say</h2>
+              <p class="section-subtitle">Trusted by thousands of book lovers around the world.</p>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <p>Beautiful catalog, fast checkout, and amazing recommendations. I found three new favorites in a week.</p>
+                <div class="stars">★★★★★</div>
+                <strong>Amelia R.</strong>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <p>The wishlist and cart experience are seamless. The UI feels polished and easy to use on mobile too.</p>
+                <div class="stars">★★★★★</div>
+                <strong>Daniel K.</strong>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="testimonial-card">
+                <div class="quote-mark">“</div>
+                <p>Every book page feels premium, and the curated collections make browsing a joy.</p>
+                <div class="stars">★★★★★</div>
+                <strong>Priya S.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3">
+            <h5>PageTurner</h5>
+            <p>Curated reads, beautiful design, and a wonderful shopping experience.</p>
+          </div>
+          <div class="col-lg-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h5>Customer Care</h5>
+            <ul class="list-unstyled">
+              <li><a href="login.html">Account</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="wishlist.html">Wishlist</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h5>Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <div class="quick-view-modal" id="quickViewModal">
+      <div class="modal-dialog">
+        <div class="modal-content p-4 rounded-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4>Quick View</h4>
+            <button class="btn-close quick-view-close"></button>
+          </div>
+          <p>Preview your next favorite book with a quick glance at the title, category, price, and rating.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+  </body>
+</html>
